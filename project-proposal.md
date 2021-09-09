@@ -1,13 +1,7 @@
 # Andrei's NLP Project Proposal
 
-My plan is to make a recipe recommender:  the user inputs a list of ingredients or some other relevant info (cuisine, type of meal, time/ease of preparation, etc.)  and my recommender spits out a few recipes they might like that are most related to each other and to the request.  In the interest of recommending truly tasty recipes, I will filter an initial set of recipes based on number of reviews and average review score.  If this project does not end up being a disaster, I hope to also use it as a basis for a web app in the upcoming Data Engineering module project.  
+My goal is to create a recipe recommender, where the user inputs list of ingredients (or perhaps some other relevant info: cuisine, type of meal, time/ease of preparation, etc.) and my recommender will output a few recipes they can make at home.  If this works nicely, I hope to also deploy it as a web app for the final Data Engineering module project.  
 
-I have not yet settled on a final dataset, but I've narrowed it down to three:
+For my dataset, I will attempt to scrape Food.com, which has 500k+ nicely formatted recipes with ratings and reviews.  This would be ideal because it will allow me to update my recommmender system as new recipes and ratings come in over time.  However, if scraping turns out to be too unpleasant, I will fall back on using a previously scraped dataset from [Kaggle](https://www.kaggle.com/irkaal/foodcom-recipes-and-reviews). 
 
-* https://www.kaggle.com/irkaal/foodcom-recipes-and-reviews
-
-* https://www.kaggle.com/shuyangli94/food-com-recipes-and-user-interactions
-
-* http://pic2recipe.csail.mit.edu/
-
-I am also not yet sure what recipe-specific documents I will be performing the NLP on : ingredients?  keywords?  recipe description?  recipe instructions?  several of the above?  Advice appreciated.
+The obvious candidate for my "documents" is the ingredients list for each recipe (I have a few ideas on how to extract meaningful information from them).  However,  I will also have access to the following info for each recipe to potentially leverage: title, description, instructions, keywords, ratings, reviews.   Some simple things to do would be to filter out the most popular recipes (based on aggregate rating and number of reviews), or come up with a metric for "easiness" based on the number of instruction steps, prep time, etc.  If you guys have any other interesting ideas or suggestions please let me know - you can't have too many cooks in the kitchen!
