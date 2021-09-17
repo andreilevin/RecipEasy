@@ -1,4 +1,4 @@
-# RecipEasy: A Content-Based Recipe Recommender System
+# RecipEasy: A Content-Based Recipe Recommender 
 
 The goal of this project was to create a recipe recommender, where the user can input a list of ingredients, and the recommender would output a few recipes they can make at home. 
 
