@@ -2,6 +2,10 @@
 
 I'm working on a recipe recommender based on recipes from Food.com.   I am still working out the kinks in my scraping workflow (almost there!), so for the minimum viable product here I am using this [Kaggle dataset](https://www.kaggle.com/irkaal/foodcom-recipes-and-reviews).  In order to speed up computation speed and in the interest of only recommending excellent recipes, I filtered this dataset to keep only recipes with a 5-star rating and a minimum of 10 reviews.  This left me with 22k recipes out of 280k+.  As a first pass, I word-tokenized the ingredients list of each recipe, stemmed the words, and ran them through a TF-IDF vectorizer and an NMF model with 15 topics.  This gave me the following topics, a few of which even make sense!    
 
+
+
+### (A)  Word-tokenized topics:
+
 ```
 Topic 0:
  SUGAR, FLOUR, CINNAMON, SALT, APPL, NUTMEG, VANILLA, WARM, CORNSTARCH, STRAWBERRI, VINEGAR, BLUEBERRI, ACTIV, BOIL, COLD 
@@ -49,9 +53,9 @@ Topic 14:
  PEPPER, SALT, PAPRIKA, PARSLEY, POTATO, WORCESTERSHIR, ONION, VINEGAR, FLOUR, THYME, BACON, SWEET, LEAN, KETCHUP, CABBAG 
 ```
 
+### (B)  Sentence-tokenized topics:
 
-
-**For comparison, here is the same thing but with a sentence tokenizer instead (using each full ingredient phrase as the token) and no stemming:**
+For comparison, here is the same thing but with a sentence tokenizer instead (using each full ingredient phrase as the token) and no stemming:
 
 ```
 Topic 0:
@@ -102,7 +106,7 @@ Topic 14:
 
 
 
-These topics are somewhat more cohesive, but the problem is that it will be difficult to get good recommendations when the user inputs their own list of ingredients (for example, if the user writes "tortillas", this will not register with any recipe that says "corn tortilla" or "flour tortilla" (or the plurals thereof).   So I will need to have my recommender satisfy the twin goals of (a) building cohesive topics from the existing recipe corpus, and (b) being flexible in understanding user-inputted ingredients, which will invariably be more terse than the words in the existing recipe corpus.
+These sentenced-tokenized topics are somewhat more cohesive, but the problem is that it will be difficult to get good recommendations when the user inputs their own list of ingredients (for example, if the user writes "tortillas", this will not register with any recipe that says "corn tortilla" or "flour tortilla" (or the plurals thereof).   So I will need to have my recommender satisfy the twin goals of (a) building cohesive topics from the existing recipe corpus, and (b) being flexible in understanding user-inputted ingredients, which will invariably be more terse than the words in the existing recipe corpus.
 
 One idea I had was to generate two types of tokens:  1-grams where the part of speech is a noun, and 2-grams where the second word is a noun.  This way I could get both "tortillas" and "flour tortillas" without introducing too many extra tokens.  Many common ingredients have this form. 
 
