@@ -1,5 +1,11 @@
 # RecipEasy: A Content-Based Recipe Recommender 
 
+### 	 Project Presentation [Slides](https://github.com/andreilevin/RecipEasy/blob/main/AndreiPresentation.pdf) | [Video](https://youtu.be/dnke4mA-c6c):
+
+[![Watch the video:](https://raw.githubusercontent.com/andreilevin/RecipEasy/main/youtube_screen.jpg)](https://youtu.be/dnke4mA-c6c)
+
+
+
 The goal of this project was to create a recipe recommendation engine, where the user can input a list of ingredients and the recommender will output a few recipes the user can make at home. 
 
 ## Design and Data
