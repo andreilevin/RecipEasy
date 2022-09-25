@@ -4,18 +4,15 @@
 
 [![Watch the video:](https://raw.githubusercontent.com/andreilevin/RecipEasy/main/youtube_screen.jpg)](https://youtu.be/dnke4mA-c6c)
 
+## Summary
 
+The goal of this project was to use natural language processing techniques to create a recipe recommendation engine where the user submits a list of ingredients and the recommender outputs a few recipes the user can then make at home.   After scraping ~16,000 recipes from Food.com, in the interest of recommending only excellent recipes I then filtered this dataset to keep only the ~6,000 recipes having at least 4 reviews and an average rating of at least 4 out of 5 stars.  For each recipe, I tokenized and vectorized its ingredient list in a novel "noun-adjacent" way (described in more detail  in the [presentation slides](https://github.com/andreilevin/RecipEasy/blob/main/AndreiPresentation.pdf) and in the [recipes-modeling](https://github.com/andreilevin/RecipEasy/blob/main/recipes-modeling.ipynb) notebook) and built a topic model using Non-negative Matrix Factorization (NMF).  Cosine similarity was used as the pairwise recipe ingredient comparison metric. 
 
-The goal of this project was to create a recipe recommendation engine, where the user can input a list of ingredients and the recommender will output a few recipes the user can make at home. 
-
-## Design and Data
-
-I scraped ~16,000 recipes from Food.com, saving the following information for each recipe:  title, url, ingredients, total cooking time, number of steps (as another proxy for complexity), number of user reviews, and average user rating (out of 5 stars).  To build my model, I filtered this data to restrict it to recipes having at least 4 reviews and an average rating of at least 4/5 stars.  This left me with a higher-quality subset of ~6,000 recipes that I could use in my recommender system.   For each recipe, I tokenized and vectorized its ingredient list in a "noun-adjacent" way (this is described in much more detail the "recipes-modeling" notebook and in the powerpoint presentation in this repo) and built a topic model using Non-negative Matrix Factorization (NMF).  Cosine similarity was used as the pairwise recipe ingredient comparison metric. 
+In the future, this recommender can be deployed to a web app such as Streamlit, and additional content can also be incorporated— for example, the user can select the cuisine or type of dish (appetizer, main course, dessert, etc.), and filter recipes by ease of preparation (determined by number of steps and cooking time), and/or cooking techniques used.
 
 ## Tools and Algorithms
 
-- Beautifulsoup for scraping
+- Beautifulsoup for web scraping
 - Pandas and Numpy for data exploration, cleaning, transformation and analysis
 - Spacy for part-of-speech tagging
-- Nltk and Sklearn for tokenization, vectorization and modeling 
-
+- NLTK and Scikit-learn for tokenization, vectorization and modeling 
