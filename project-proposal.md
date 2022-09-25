@@ -1,7 +1,0 @@
-# Andrei's NLP Project Proposal
-
-My goal is to create a recipe recommender, where the user inputs list of ingredients (or perhaps some other relevant info: cuisine, type of meal, time/ease of preparation, etc.) and my recommender will output a few recipes they can make at home.  If this works nicely, I hope to also deploy it as a web app for the final Data Engineering module project.  
-
-For my dataset, I will attempt to scrape Food.com, which has 500k+ nicely formatted recipes with ratings and reviews.  This would be ideal because it will allow me to update my recommmender system as new recipes and ratings come in over time.  However, if scraping turns out to be too unpleasant, I will fall back on using a previously scraped dataset from [Kaggle](https://www.kaggle.com/irkaal/foodcom-recipes-and-reviews). 
-
-The obvious candidate for my "documents" is the ingredients list for each recipe (I have a few ideas on how to extract meaningful information from them).  However,  I will also have access to the following info for each recipe to potentially leverage: title, description, instructions, keywords, ratings, reviews.   Some simple things to do would be to filter out the most popular recipes (based on aggregate rating and number of reviews), or come up with a metric for "easiness" based on the number of instruction steps, prep time, etc.  If you guys have any other interesting ideas or suggestions please let me know - you can't have too many cooks in the kitchen!
