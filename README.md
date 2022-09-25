@@ -1,4 +1,4 @@
-# RecipEasy: A Content-Based Recipe Recommender 
+# RecipEasy: An Ingredient-Based Recipe Recommender 
 
 ### 	 Project Presentation [Slides](https://github.com/andreilevin/RecipEasy/blob/main/AndreiPresentation.pdf) | [Video](https://youtu.be/dnke4mA-c6c):
 
